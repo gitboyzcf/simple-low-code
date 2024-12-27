@@ -1,9 +1,7 @@
 <template>
   <div class="home">
-    首页
+    <Header />
   </div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>

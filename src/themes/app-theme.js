@@ -16,6 +16,21 @@ export const NoirPreset = definePreset(Aura, {
       900: '{sky.900}',
       950: '{sky.950}'
     },
+    list: {
+      padding: '0.25rem 0.25rem',
+      gap: '2px',
+      header: {
+        padding: '0.5rem 1rem 0.25rem 1rem'
+      },
+      option: {
+        padding: '0.2rem 0.25rem',
+        borderRadius: '{border.radius.sm}'
+      },
+      optionGroup: {
+        padding: '0.5rem 0.75rem',
+        fontWeight: '600'
+      }
+    },
     colorScheme: {
       light: {
         primary: {

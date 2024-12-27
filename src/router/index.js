@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { usePageTitle } from './helper'
 import storage from '@/utils/storage'
+import Layout from '@/layout/Layout.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -16,16 +17,20 @@ const router = createRouter({
 
     {
       path: '/',
-      redirect: '/home'
-    },
-    {
-      path: '/home',
-      name: 'Home',
-      component: () => import('@/views/home/home.vue'),
-      meta: {
-        title: '首页',
-        isAuth: true
-      }
+      redirect: '/home',
+      component: Layout,
+      children: [
+        {
+          path: '/home',
+          name: 'Home',
+          component: () => import('@/views/home/home.vue'),
+          meta: {
+            title: '首页',
+            isAuth: true,
+            noKeepAlive: true
+          }
+        }
+      ]
     },
     {
       path: '/login',
@@ -46,15 +51,20 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  const token = storage.local.get('token')
   usePageTitle(to)
-  if (to.meta && to.meta.isAuth) {
-    if (storage.local.get('token')) {
-      next({ path: from.query.redirect || '/' })
+  if (to?.meta && to.meta.isAuth) {
+    if (token) {
+      next()
     } else {
       next({ path: '/login', query: { redirect: to.fullPath } })
     }
   } else {
-    next()
+    if (token && to.name === 'Login') {
+      next({ path: '/' })
+    } else {
+      next()
+    }
   }
 })
 

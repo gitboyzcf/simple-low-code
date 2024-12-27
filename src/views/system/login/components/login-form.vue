@@ -1,6 +1,5 @@
 <template>
   <div class="login-form h-full w-56">
-    <PubToast type="success" />
     <div class="card flex flex-col items-center gap-4 justify-center w-full h-full">
       <h2 class="font-bold">登录</h2>
       <Form
@@ -21,7 +20,14 @@
         </div>
         <div class="flex flex-col gap-1">
           <FloatLabel variant="on">
-            <Password name="password" inputId="password" :feedback="false" fluid toggleMask />
+            <Password
+              name="password"
+              inputId="password"
+              :feedback="false"
+              fluid
+              toggleMask
+              :pt="{ pcInputText: { root: { autocomplete: 'off' } } }"
+            />
             <label for="password">密码</label>
           </FloatLabel>
           <Message v-if="$form.password?.invalid" severity="error" size="small" variant="simple">{{
@@ -36,21 +42,21 @@
 
 <script setup>
   import storage from '@/utils/storage'
+  import { useOutSideUserStore } from '@/stores/modules/user'
   import { zodResolver } from '@primevue/forms/resolvers/zod'
   import { useToast } from 'primevue/usetoast'
   import { z } from 'zod'
 
+  const userStore = useOutSideUserStore()
+  console.log(userStore)
+
   const loading = ref(false)
   const router = useRouter()
+  const route = useRoute()
   const toast = useToast()
   const initialValues = ref({
     username: '',
     password: ''
-  })
-
-  const userInfo = ref({
-    user: 'admin',
-    avatar: 'https://primefaces.org/cdn/primevue/images/organization/walter.jpg'
   })
 
   const resolver = ref(
@@ -65,8 +71,8 @@
   const onFormSubmit = ({ valid }) => {
     if (valid) {
       loading.value = true
+      // 模拟登录
       setTimeout(() => {
-        storage.local.set('token', 'token')
         toast.add({
           unstyled: true,
           severity: 'success',
@@ -76,11 +82,14 @@
             closeButton: 'hidden!'
           }
         })
+        Object.assign(userStore.userInfo, {
+          user: 'admin',
+          avatar: 'https://primefaces.org/cdn/primevue/images/organization/walter.jpg'
+        })
+        storage.local.set('token', 'token')
         loading.value = false
+        router.replace({ path: route.query.redirect || '/' })
       }, 1500)
     }
   }
-
-  // onMounted(() => {
-  // })
 </script>

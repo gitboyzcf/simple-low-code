@@ -7,6 +7,8 @@
  */
 import { kebabCase } from 'lodash-es'
 import StyleClass from 'primevue/styleclass';
+import FocusTrap from 'primevue/focustrap';
+
 
 function validatorModules(obj) {
   const vueDirectiveKeys = [
@@ -39,5 +41,6 @@ export default {
       }
     })
     app.directive('styleclass', StyleClass)
+    app.directive('focustrap', FocusTrap);
   }
 }

@@ -4,46 +4,45 @@ import Aura from '@primevue/themes/aura'
 export const NoirPreset = definePreset(Aura, {
   semantic: {
     primary: {
-      50: '{blue.50}',
-      100: '{blue.100}',
-      200: '{blue.200}',
-      300: '{blue.300}',
-      400: '{blue.400}',
-      500: '{blue.500}',
-      600: '{blue.600}',
-      700: '{blue.700}',
-      800: '{blue.800}',
-      900: '{blue.900}',
-      950: '{blue.950}'
+      50: '{sky.50}',
+      100: '{sky.100}',
+      200: '{sky.200}',
+      300: '{sky.300}',
+      400: '{sky.400}',
+      500: '{sky.500}',
+      600: '{sky.600}',
+      700: '{sky.700}',
+      800: '{sky.800}',
+      900: '{sky.900}',
+      950: '{sky.950}'
     },
     colorScheme: {
       light: {
         primary: {
-          color: '{blue.950}',
+          color: '{sky.500}',
           contrastColor: '#ffffff',
-          hoverColor: '{blue.800}',
-          activeColor: '{blue.700}'
+          hoverColor: '{sky.600}',
+          activeColor: '{sky.700}'
         },
-
         highlight: {
-          background: '{blue.950}',
-          focusBackground: '{blue.700}',
-          color: '#ffffff',
-          focusColor: '#ffffff'
-        },
+          background: '{sky.50}',
+          focusBackground: '{sky.100}',
+          color: '{sky.700}',
+          focusColor: '{sky.800}'
+        }
       },
       dark: {
         primary: {
-          color: '{primary.50}',
-          contrastColor: '{primary.950}',
-          hoverColor: '{primary.200}',
-          activeColor: '{primary.300}'
+          color: '{sky.400}',
+          contrastColor: '{sky.900}',
+          hoverColor: '{sky.300}',
+          activeColor: '{sky.200}'
         },
         highlight: {
-          background: '{primary.50}',
-          focusBackground: '{primary.300}',
-          color: '{primary.950}',
-          focusColor: '{primary.950}'
+          background: '{sky.50}',
+          focusBackground: '{sky.300}',
+          color: '{sky.950}',
+          focusColor: '{sky.950}'
         }
       }
     }

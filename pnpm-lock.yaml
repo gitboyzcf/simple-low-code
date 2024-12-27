@@ -8,6 +8,9 @@ dependencies:
   '@primevue/core':
     specifier: ^4.2.5
     version: 4.2.5(vue@3.5.12)
+  '@primevue/forms':
+    specifier: ^4.2.5
+    version: 4.2.5(vue@3.5.12)
   '@primevue/themes':
     specifier: ^4.2.1
     version: 4.2.1
@@ -35,6 +38,9 @@ dependencies:
   fabric:
     specifier: ^6.4.3
     version: 6.4.3
+  gsap:
+    specifier: ^3.12.5
+    version: 3.12.5
   js-cookie:
     specifier: ^3.0.5
     version: 3.0.5
@@ -56,6 +62,9 @@ dependencies:
   swiper:
     specifier: ^11.1.14
     version: 11.1.14
+  typewriter-effect:
+    specifier: ^2.21.0
+    version: 2.21.0(react-dom@18.3.1)(react@18.3.1)
   uuid:
     specifier: ^11.0.2
     version: 11.0.2
@@ -80,6 +89,9 @@ dependencies:
   xgplayer:
     specifier: ^3.0.20
     version: 3.0.20(core-js@3.39.0)
+  zod:
+    specifier: ^3.24.1
+    version: 3.24.1
 
 devDependencies:
   '@commitlint/cli':
@@ -1320,11 +1332,18 @@ packages:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
     dev: false
 
+  /@primeuix/forms@0.0.2:
+    resolution: {integrity: sha512-DpecPQd/Qf/kav4LKCaIeGuT3AkwhJzuHCkLANTVlN/zBvo8KIj3OZHsCkm0zlIMVVnaJdtx1ULNlRQdudef+A==}
+    engines: {node: '>=12.11.0'}
+    dependencies:
+      '@primeuix/utils': 0.3.2
+    dev: false
+
   /@primeuix/styled@0.3.0:
     resolution: {integrity: sha512-XsLbmyM1u50A0EDATIHyqm5O/zOCSyNKPk4pNN8HFvEPehbsjf4tkXcRZAyaVvntSCLpV4XGAj7v5EDCQkBRlg==}
     engines: {node: '>=12.11.0'}
     dependencies:
-      '@primeuix/utils': 0.3.0
+      '@primeuix/utils': 0.3.2
     dev: false
 
   /@primeuix/styled@0.3.2:
@@ -1358,7 +1377,7 @@ packages:
       vue: ^3.3.0
     dependencies:
       '@primeuix/styled': 0.3.0
-      '@primeuix/utils': 0.3.0
+      '@primeuix/utils': 0.3.2
       vue: 3.5.12(typescript@5.6.3)
     dev: false
 
@@ -1373,11 +1392,22 @@ packages:
       vue: 3.5.12(typescript@5.6.3)
     dev: false
 
+  /@primevue/forms@4.2.5(vue@3.5.12):
+    resolution: {integrity: sha512-5jarJQ9Qv32bOo/0tY5bqR3JZI6+YmmoUQ2mjhVSbVElQsE4FNfhT7a7JwF+xgBPMPc8KWGNA1QB248HhPNVAg==}
+    engines: {node: '>=12.11.0'}
+    dependencies:
+      '@primeuix/forms': 0.0.2
+      '@primeuix/utils': 0.3.2
+      '@primevue/core': 4.2.5(vue@3.5.12)
+    transitivePeerDependencies:
+      - vue
+    dev: false
+
   /@primevue/icons@4.2.1(vue@3.5.12):
     resolution: {integrity: sha512-TOhxgkcmgBqmlHlf2x+gs4874iHopkow0gRAC5FztZTgTZQrqy8hPIA9b4O1lW7P6GOjGuVIwSH8y2lw6Q8koA==}
     engines: {node: '>=12.11.0'}
     dependencies:
-      '@primeuix/utils': 0.3.0
+      '@primeuix/utils': 0.3.2
       '@primevue/core': 4.2.1(vue@3.5.12)
     transitivePeerDependencies:
       - vue
@@ -3544,6 +3574,10 @@ packages:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
     dev: true
 
+  /gsap@3.12.5:
+    resolution: {integrity: sha512-srBfnk4n+Oe/ZnMIOXt3gT605BX9x5+rh/prT2F1SsNJsU1XuMiP0E2aptW481OnonOGACZWBqseH5Z7csHxhQ==}
+    dev: false
+
   /gzip-size@6.0.0:
     resolution: {integrity: sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==}
     engines: {node: '>=10'}
@@ -3838,7 +3872,6 @@ packages:
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
-    dev: true
 
   /js-tokens@9.0.0:
     resolution: {integrity: sha512-WriZw1luRMlmV3LGJaR6QOJjWwgLUTf89OwT2lUOyjX2dJGBwgmIkbcz+7WFZjrZM635JOIR517++e/67CP9dQ==}
@@ -4091,6 +4124,13 @@ packages:
     resolution: {integrity: sha512-Ajzxb8CM6WAnFjgiloPsI3bF+WCxcvhdIG3KNA2KN962+tdBsHcuQ4k4qX/EcS/2CRkcc0iAkR956Nib6aXU/Q==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /loose-envify@1.4.0:
+    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
+    dependencies:
+      js-tokens: 4.0.0
+    dev: false
 
   /lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
@@ -4351,7 +4391,6 @@ packages:
     engines: {node: '>=0.10.0'}
     requiresBuild: true
     dev: false
-    optional: true
 
   /ofetch@1.4.1:
     resolution: {integrity: sha512-QZj2DfGplQAr2oj9KzceK9Hwz6Whxazmn85yYeVuS3u9XTMOGMRx0kO95MQ+vLsj/S/NwBDMMLU5hpxvI6Tklw==}
@@ -4534,6 +4573,10 @@ packages:
     resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
     dev: true
 
+  /performance-now@2.1.0:
+    resolution: {integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==}
+    dev: false
+
   /picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -4632,6 +4675,14 @@ packages:
       - vue
     dev: false
 
+  /prop-types@15.8.1:
+    resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
+    dev: false
+
   /proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
     dev: false
@@ -4656,6 +4707,33 @@ packages:
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
+
+  /raf@3.4.1:
+    resolution: {integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==}
+    dependencies:
+      performance-now: 2.1.0
+    dev: false
+
+  /react-dom@18.3.1(react@18.3.1):
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
+    peerDependencies:
+      react: ^18.3.1
+    dependencies:
+      loose-envify: 1.4.0
+      react: 18.3.1
+      scheduler: 0.23.2
+    dev: false
+
+  /react-is@16.13.1:
+    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: false
+
+  /react@18.3.1:
+    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
+    dev: false
 
   /readable-stream@3.6.2:
     resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
@@ -4825,6 +4903,12 @@ packages:
       xmlchars: 2.2.0
     dev: false
     optional: true
+
+  /scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
+    dependencies:
+      loose-envify: 1.4.0
+    dev: false
 
   /scule@1.3.0:
     resolution: {integrity: sha512-6FtHJEvt+pVMIB9IBY+IcCJ6Z5f1iQnytgyfKMhDKgmzYG+TeH/wx1y3l27rshSbLiSanrR9ffZDrEsmjlQF2g==}
@@ -5159,6 +5243,18 @@ packages:
     resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  /typewriter-effect@2.21.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-Y3VL1fuJpUBj0gS4OTXBLzy1gnYTYaBuVuuO99tGNyTkkub5CXi+b/hsV7Og9fp6HlhogOwWJwgq7iXI5sQlEg==}
+    peerDependencies:
+      react: ^17.x || ^18.x
+      react-dom: ^17.x || ^18.x
+    dependencies:
+      prop-types: 15.8.1
+      raf: 3.4.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
 
   /ufo@1.5.4:
     resolution: {integrity: sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==}
@@ -5768,6 +5864,10 @@ packages:
     resolution: {integrity: sha512-b4JR1PFR10y1mKjhHY9LaGo6tmrgjit7hxVIeAmyMw3jegXR4dhYqLaQF5zMXZxY7tLpMyJeLjr1C4rLmkVe8g==}
     engines: {node: '>=12.20'}
     dev: true
+
+  /zod@3.24.1:
+    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
+    dev: false
 
   /zrender@5.6.0:
     resolution: {integrity: sha512-uzgraf4njmmHAbEUxMJ8Oxg+P3fT04O+9p7gY+wJRVxo8Ge+KmYv0WJev945EH4wFuc4OY2NLXz46FZrWS9xJg==}

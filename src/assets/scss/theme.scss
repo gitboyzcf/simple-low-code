@@ -1,8 +1,8 @@
 :root {
-  --zdy-c-bg: #ffffff;
-  --zdy-c-text: #3c3c43;
+  --zdy-c-bg: var(--p-menubar-background);
+  --zdy-c-text: var(--p-menubar-color);
 }
 .dark {
-  --zdy-c-bg: #1b1b1f;
-  --zdy-c-text: #ffffff;
+  --zdy-c-bg: var(--p-menubar-background);
+  --zdy-c-text: var(--p-menubar-color);
 }

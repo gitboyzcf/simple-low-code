@@ -17,6 +17,11 @@ export default defineConfig({
   theme: {
     colors: {
       // ...
+    },
+    breakpoints: {
+      sm: '320px',
+      md: '640px',
+      lg: '960px',
     }
   },
   presets: [

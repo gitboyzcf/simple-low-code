@@ -3,6 +3,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import directives from './directives'
 import PrimeVue from 'primevue/config'
+import ToastService from 'primevue/toastservice';
 import Preset from '@/themes/app-theme'
 import { i18n } from '@/locales'
 import { setupStore } from '@/stores'
@@ -21,6 +22,7 @@ async function bootstrap() {
   const app = createApp(App)
 
   app.use(PrimeVue, { theme: Preset, ripple: true })
+  app.use(ToastService);
   app.use(directives)
   app.use(i18n)
 

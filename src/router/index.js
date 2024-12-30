@@ -1,8 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { usePageTitle } from './helper'
+import { useOutsideSystemStore } from '@/stores/modules/system'
 import storage from '@/utils/storage'
 import Layout from '@/layout/Layout.vue'
 
+const systemStore = useOutsideSystemStore()
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
@@ -51,6 +53,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  systemStore.loading = true
   const token = storage.local.get('token')
   usePageTitle(to)
   if (to?.meta && to.meta.isAuth) {
@@ -66,6 +69,10 @@ router.beforeEach((to, from, next) => {
       next()
     }
   }
+})
+
+router.afterEach(() => {
+  systemStore.loading = false
 })
 
 async function setupRouter(app) {

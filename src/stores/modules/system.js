@@ -8,7 +8,8 @@ export const useSystemStore = defineStore('systemStore', {
         ? window.location.origin
         : import.meta.env.VITE_APP_API_BASEURL,
     language: storage.local.get('language') || navigator.language || navigator.userLanguage, // 语言
-    scheme: localStorage.getItem('vueuse-color-scheme') != 'dark' ? 'auto' : 'dark' // 主题
+    scheme: localStorage.getItem('vueuse-color-scheme') != 'dark' ? 'auto' : 'dark', // 主题
+    loading: false,
   }),
   getters: {
     ipF() {

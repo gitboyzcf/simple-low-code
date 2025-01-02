@@ -45,8 +45,13 @@ export default [
       'no-multiple-empty-lines': ['warn', { max: 1 }], // 不允许多个空行
       'no-unexpected-multiline': 'error', // 禁止空余的多行
       'no-useless-escape': 'off', // 禁止不必要的转义字符
-
-      'vue/multi-word-component-names': 0
+      'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+      'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+      'no-unused-vars': 'off',
+      'vue/no-unused-vars': 'off',
+      'vue/multi-word-component-names': 'off',
+      'vue/valid-template-root': 'off',
+      'vue/no-mutating-props': 'off'
     }
   },
   /**

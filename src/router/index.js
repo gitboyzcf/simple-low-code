@@ -1,10 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { usePageTitle } from './helper'
-import { useOutsideSystemStore } from '@/stores/modules/system'
 import storage from '@/utils/storage'
 import Layout from '@/layout/Layout.vue'
 
-const systemStore = useOutsideSystemStore()
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
@@ -23,14 +21,26 @@ const router = createRouter({
       component: Layout,
       children: [
         {
-          path: '/home',
+          path: '/home/:id(.*)*',
           name: 'Home',
           component: () => import('@/views/home/home.vue'),
           meta: {
             title: '首页',
             isAuth: true,
             noKeepAlive: true
-          }
+          },
+          children: [
+            {
+              path: 'edit',
+              name: 'HomeEdit',
+              component: () => import('@/views/edit/edit.vue'),
+              meta: {
+                title: '编辑',
+                isAuth: true,
+                noKeepAlive: false
+              }
+            }
+          ]
         }
       ]
     },
@@ -53,7 +63,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  systemStore.loading = true
+  $loading(true)
   const token = storage.local.get('token')
   usePageTitle(to)
   if (to?.meta && to.meta.isAuth) {
@@ -72,7 +82,7 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach(() => {
-  systemStore.loading = false
+  $loading(false)
 })
 
 async function setupRouter(app) {

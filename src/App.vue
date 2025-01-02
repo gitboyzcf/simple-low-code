@@ -1,8 +1,33 @@
 <script setup>
   import { RouterView } from 'vue-router'
+  import { useToast } from 'primevue/usetoast'
   import { useOutsideSystemStore } from '@/stores/modules/system'
 
   const systemStore = useOutsideSystemStore()
+  const toast = useToast()
+
+  /**
+   * 全局提示消息
+   * @param type 类型 success info warn error
+   * @param text  提示文本
+   */
+  window['$toast'] = (type, text) => {
+    toast.add({
+      unstyled: true,
+      severity: type,
+      summary: text,
+      life: 3000,
+      pt: {
+        closeButton: 'hidden!'
+      }
+    })
+  }
+
+  /**
+   * 全局加载状态
+   * @param loading 加载状态 true | false
+   */
+  window['$loading'] = (loading) => systemStore.setLoading(loading)
 </script>
 
 <template>

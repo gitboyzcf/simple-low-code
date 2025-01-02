@@ -44,16 +44,13 @@
   import storage from '@/utils/storage'
   import { useOutSideUserStore } from '@/stores/modules/user'
   import { zodResolver } from '@primevue/forms/resolvers/zod'
-  import { useToast } from 'primevue/usetoast'
   import { z } from 'zod'
+  import { getUUID } from '@/utils'
+  import { routerTurnByPath, fetchPathByName } from '@/router/helper'
 
   const userStore = useOutSideUserStore()
-  console.log(userStore)
 
   const loading = ref(false)
-  const router = useRouter()
-  const route = useRoute()
-  const toast = useToast()
   const initialValues = ref({
     username: '',
     password: ''
@@ -73,23 +70,17 @@
       loading.value = true
       // 模拟登录
       setTimeout(() => {
-        toast.add({
-          unstyled: true,
-          severity: 'success',
-          summary: '登录成功',
-          life: 3000,
-          pt: {
-            closeButton: 'hidden!'
-          }
-        })
+        window.$toast('success', '登录成功')
         Object.assign(userStore.userInfo, {
           user: 'admin',
           avatar: 'https://primefaces.org/cdn/primevue/images/organization/walter.jpg'
         })
         storage.local.set('token', 'token')
         loading.value = false
-        router.replace({ path: route.query.redirect || '/' })
-      }, 1500)
+        const id = getUUID()
+        const path = fetchPathByName('Home', 'href')
+        routerTurnByPath(path.split('#')[1], [id], undefined, false)
+      }, 500)
     }
   }
 </script>

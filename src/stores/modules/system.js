@@ -9,7 +9,7 @@ export const useSystemStore = defineStore('systemStore', {
         : import.meta.env.VITE_APP_API_BASEURL,
     language: storage.local.get('language') || navigator.language || navigator.userLanguage, // 语言
     scheme: localStorage.getItem('vueuse-color-scheme') != 'dark' ? 'auto' : 'dark', // 主题
-    loading: false,
+    loading: false
   }),
   getters: {
     ipF() {
@@ -23,6 +23,11 @@ export const useSystemStore = defineStore('systemStore', {
       storage.session.clear()
       storage.local.clear()
       router.replace('/login')
+    },
+
+    // 全局加载
+    setLoading(loading) {
+      this.loading = loading
     }
   }
 })

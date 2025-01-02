@@ -2,7 +2,7 @@ import { ChartList } from '@/packages/components/Charts/index';
 import { DecorateList } from '@/packages/components/Decorates/index';
 import { InformationList } from '@/packages/components/Informations/index';
 import { TableList } from '@/packages/components/Tables/index';
-import { PackagesCategoryEnum, FetchComFlagType } from '@/packages/index.d';
+import { PackagesCategoryEnum, FetchComFlagType } from '@/enum';
 const configModules = import.meta.glob('./components/**/config.vue', {
     eager: true
 });

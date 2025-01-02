@@ -1,12 +1,12 @@
 
-import { ChatCategoryEnum, ChatCategoryEnumName, PackagesCategoryEnum, ChartFrameEnum } from '@/enum';
+import { ChatCategoryEnumDecorates, ChatCategoryEnumNameDecorates, PackagesCategoryEnum, ChartFrameEnum } from '@/enum';
 export const NumberConfig = {
     key: 'Number',
     chartKey: 'VNumber',
     conKey: 'VCNumber',
     title: '数字计数',
-    category: ChatCategoryEnum.MORE,
-    categoryName: ChatCategoryEnumName.MORE,
+    category: ChatCategoryEnumDecorates.MORE,
+    categoryName: ChatCategoryEnumNameDecorates.MORE,
     package: PackagesCategoryEnum.DECORATES,
     chartFrame: ChartFrameEnum.COMMON,
     image: 'number.png'

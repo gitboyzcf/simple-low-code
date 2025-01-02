@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home h-full">
     <Header />
     <div class="home-main">
       编辑
@@ -7,4 +7,14 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import {
+  selectOptions,
+  selectValue,
+  clickItemHandle,
+  menuOptions,
+} from './hooks/useAside.hook'
+
+console.log(menuOptions);
+
+</script>

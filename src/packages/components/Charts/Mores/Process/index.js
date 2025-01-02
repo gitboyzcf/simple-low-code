@@ -1,5 +1,3 @@
-// 公共类型声明
-import { PackagesCategoryEnum } from '@/packages/index.d';
 // 当前[信息模块]分类声明
 import { ChatCategoryEnum, ChatCategoryEnumName, PackagesCategoryEnum, ChartFrameEnum } from '@/enum';
 export const ProcessConfig = {

@@ -1,12 +1,12 @@
 
-import { ChatCategoryEnum, ChatCategoryEnumName, PackagesCategoryEnum, ChartFrameEnum } from '@/enum';
+import { ChatCategoryEnumTables, ChatCategoryEnumNameTables, PackagesCategoryEnum, ChartFrameEnum } from '@/enum';
 export const TableListConfig = {
     key: 'TableList',
     chartKey: 'VTableList',
     conKey: 'VCTableList',
     title: '滚动排名列表',
-    category: ChatCategoryEnum.TABLE,
-    categoryName: ChatCategoryEnumName.TABLE,
+    category: ChatCategoryEnumTables.TABLE,
+    categoryName: ChatCategoryEnumNameTables.TABLE,
     package: PackagesCategoryEnum.TABLES,
     chartFrame: ChartFrameEnum.COMMON,
     image: 'tables_list.png'

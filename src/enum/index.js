@@ -97,6 +97,39 @@ export const ChatCategoryEnumName = Object.freeze({
   MAP: '地图',
   MORE: '更多'
 })
+export const ChatCategoryEnumDecorates = Object.freeze({
+  BORDER: 'Borders',
+  DECORATE: 'Decorates',
+  THREE: 'Three',
+  MORE: 'Mores'
+})
+export const ChatCategoryEnumNameDecorates = Object.freeze({
+  BORDER: '边框',
+  DECORATE: '装饰',
+  THREE: '三维',
+  MORE: '更多'
+})
+export const ChatCategoryEnumInformations = Object.freeze({
+  TEXT: 'Texts',
+  TITLE: 'Titles',
+  INPUTS: 'Inputs',
+  MORE: 'Mores'
+})
+export const ChatCategoryEnumNameInformations = Object.freeze({
+  TEXT: '文本',
+  TITLE: '标题',
+  // 控件 :> 数据录入
+  INPUTS: '控件',
+  MORE: '更多'
+})
+
+export const ChatCategoryEnumTables = Object.freeze({
+  TABLE: 'Tables'
+})
+
+export const ChatCategoryEnumNameTables = Object.freeze({
+  TABLE: '表格'
+})
 
 export const ChartFrameEnum = Object.freeze({
   // 支持 dataset 的 echarts 框架
@@ -210,4 +243,20 @@ export const MenuEnum = Object.freeze({
   HIDE: 'hide',
   // 显示
   SHOW: 'show'
+})
+
+export const ChartLayoutStoreEnum = Object.freeze({
+  LAYERS: 'layers',
+  CHARTS: 'charts',
+  DETAILS: 'details',
+  Chart_TYPE: 'chartType',
+  LAYER_TYPE: 'layerType',
+  PERCENTAGE: 'percentage',
+  RE_POSITION_CANVAS: 'rePositionCanvas'
+})
+
+// 获取组件
+export const FetchComFlagType = Object.freeze({
+  VIEW: 0,
+  CONFIG: 1
 })

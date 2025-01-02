@@ -1,12 +1,12 @@
 
-import { ChatCategoryEnum, ChatCategoryEnumName, PackagesCategoryEnum, ChartFrameEnum } from '@/enum';
+import { ChatCategoryEnumInformations, ChatCategoryEnumNameInformations, PackagesCategoryEnum, ChartFrameEnum } from '@/enum';
 export const WordCloudConfig = {
     key: 'WordCloud',
     chartKey: 'VWordCloud',
     conKey: 'VCWordCloud',
     title: '词云',
-    category: ChatCategoryEnum.MORE,
-    categoryName: ChatCategoryEnumName.MORE,
+    category: ChatCategoryEnumInformations.MORE,
+    categoryName: ChatCategoryEnumNameInformations.MORE,
     package: PackagesCategoryEnum.INFORMATIONS,
     chartFrame: ChartFrameEnum.COMMON,
     image: 'words_cloud.png'

@@ -1,4 +1,5 @@
 import mitt from 'mitt'
+import { Icon } from '@iconify/vue'
 export * from './type'
 
 /**
@@ -42,4 +43,13 @@ export const $mitt = mitt()
  */
 export const getUUID = (randomLength = 10) => {
   return Number(Math.random().toString().substring(2, randomLength) + Date.now()).toString(36)
+}
+
+/**
+ * * render 图标
+ *  @param icon 图标
+ *  @param set 设置项
+ */
+export const renderIcon = (icon, set = {}) => {
+  return () => h(Icon, { icon, ...set })
 }
